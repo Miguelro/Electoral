@@ -1,3 +1,5 @@
 Sacado de 
 
 https://www.arcgis.com/home/item.html?id=83d81d9336c745fd839465beab885ab7
+
+Todos esos ficheros se descargarán y se colocarán en una carpeta, cuyo patch deberá ser tenido en cuenta a la hora de hacer la corresponsiente representación geográfica del mapa.
