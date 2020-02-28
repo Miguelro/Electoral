@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "# Hello, world!\n#\n# This is an example function named 'hello'\n# which prints 'Hello, world!'.\n#\n# You can learn more about package authoring with RStudio at:\n#\n#   http://r-pkgs.had.co.nz/\n#\n# Some useful keyboard shortcuts for package authoring:\n#\n#   Build and Reload Package:  'Ctrl + Shift + B'\n#   Check Package:             'Ctrl + Shift + E'\n#   Test Package:              'Ctrl + Shift + T'\n\n#' @title Multiplicar por dos *****\n#' @description Esta es una funcion de ejemplo para multiplicar un valor o vector \\code{x} por dos.\n#' @param x un elemento o vector numerico\n#' @details Esta funcion es parte del tutorial para hacer paquetes del curso de Metodos Multivariados 2017\n#' en el ITAM. La funcion recibe un elemento \\code{x} que puede ser un numero o un vector numerico y lo devuelve\n#' multiplicado por dos. La documentacion de ayuda es generada usando roxygen2.\n#' @examples\n#' timesTwo(3)\n#' timesTwo(0:10)\n#' @export\nhello <- function() {\n  print(\"Hello, world!\")\n}\n",
+    "created" : 1573294740033.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "265301496",
+    "id" : "987FF97E",
+    "lastKnownWriteTime" : 1573295397,
+    "last_content_update" : 1573295397132,
+    "path" : "C:/Master_Estad_Apli/TFM/Code/Relectoral/R/hello.R",
+    "project_path" : "R/hello.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
