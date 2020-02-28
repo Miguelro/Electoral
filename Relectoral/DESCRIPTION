@@ -6,7 +6,7 @@ Author: Miguel Rodríguez Asensio
 Maintainer: Miguel Rodríguez Asensio <miguel.rodriguezasensio@gmail.com>
 Description: More about what it does (maybe more than one line)
     Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+License: GPL-2  
 Encoding: UTF-8
 Imports: readxl, ggforce, ggplot2,xlsx,dplyr,sf
 LazyData: true
