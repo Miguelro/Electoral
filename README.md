@@ -1,4 +1,4 @@
-# Electoral
+# Relectoral
 En este repositorio se van a incluir diferentes archivos que pueden servir para calcular
  muchos indicadores que permitan estudiar muchos aspectos relacionados con procesos
  electorales.
@@ -7,7 +7,7 @@ En este repositorio se van a incluir diferentes archivos que pueden servir para 
  carpeta Relectoral.
  
  Igualmente en la carpeta base, se puede encontrar el fichero "Relectoral_0.1.0.tar.gz", que 
- se puede decargar a ordenador local de cada usuario, y utilizar el mismo para su carga en R, 
+ se puede descargar a ordenador local de cada usuario, y utilizar el mismo para su carga en R, 
  y poder de esta manera utilizar el amplio elenco de funciones que tiene para obtener
  una ingente cantidad de indicadores electorales.
  
