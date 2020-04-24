@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{Rae_corregido}
 \alias{Rae_corregido}
-\title{Indice de RAE corregido ("Rco")}
+\title{Indice de desproporcionalidad de RAE corregido ("Rco")}
 \usage{
 Rae_corregido(votes, seats, correc = 0.5)
 }
@@ -11,14 +11,14 @@ Rae_corregido(votes, seats, correc = 0.5)
 
 \item{seats}{Es un vector de números enteros, conteniendo TODOS los escaños obtenidos por las candidaturas}
 
-\item{correc}{Es un valor decimal qu indica el porcentaje de votos que sirve de corte}
+\item{correc}{Es un valor decimal que indica el porcentaje de votos que sirve de corte.}
 }
 \value{
 Devuelve el valor obtenido para el índice
 }
 \description{
 Fue el propio Rae el que se dio cuenta de los problemas que se generaban en el
-cálculo del índice al tener en cuenta todos los partidos. Por este motivo hizo una revisión
+cálculo del índice RAE al tener en cuenta todos los partidos. Por este motivo hizo una revisión
 del mismo y decidió excluir del cálculo todos partidos que no lleguen al 0.5 por ciento de los
 votos. En la función creada para calcular este índice por defecto toma este valor corrector, aunque
 se permite introducir otro valor, como se puede ver en el ejemplo que se presenta líneas abajo.

@@ -16,7 +16,7 @@ reparto_div(candidaturas, votos, escanos, metodo)
 \item{metodo}{Es el método a utilizar los valores admitidos son
 c("dhondt","saint_lague","saint_lague_Mod",
 "Danish","Imperiali","Hill_Huntington",
-"Dean")))}
+"Dean")}
 }
 \value{
 Devuelve un Dataframe con los nomnbre de los partidos políticos y los
@@ -71,6 +71,10 @@ reparto_div(c("A","B","C","D"),c(340000,280000,160000,60000),7,metodo='Dean')
 \code{\link{Restos_Mayores}} para reparto restos mayores
 
 \url{https://en.wikipedia.org/wiki/D\%27Hondt_method} en wikipedia
+
+\url{https://bit.ly/3aEidM9} en wikipedia.
+
+\url{https://bit.ly/2Q0a0u0} en internet.
 
 Other Reparto Diputados: \code{\link{Restos_Mayores}}
 }

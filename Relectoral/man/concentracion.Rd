@@ -16,7 +16,7 @@ Devuelve un dataframe, con las columnas "electoral" y "parlamentario" para alber
 respectivamente el valor del índice de concentración de voto electoral o el parlamentario
 }
 \description{
-Otro indicador muy importante del sistema de partidos es el de concentracón del voto,
+Otro indicador muy importante del sistema de partidos es el de concentración del voto,
 que indica qué porcentaje de votos o escaños se llevan los dos partidos que tienen el mayor
 número de votos. La fórmula utilizada para calcular este indicador es la siguiente:
 

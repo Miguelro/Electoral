@@ -14,7 +14,7 @@ Restos_Mayores(partidos, votos, escanos, metodo = "Hare")
 \item{escanos}{un número entero conteniendo el total de escaños a repartir}
 
 \item{metodo}{Es el método a utilizar los valores admitidos son
-c("Hare","Droop","Imperiali","Mod_Imperiali",hangenbach-bischo").
+c("Hare","Droop","Imperiali","Mod_Imperiali","hangenbach-bischo").
 El valor por defecto es "Hare"}
 }
 \value{

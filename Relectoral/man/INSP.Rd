@@ -16,7 +16,7 @@ electoral correspondiente.}
 Un número real conteniendo el valor del indicador
 }
 \description{
-Este índice se basa en el índice de nacionalización de cada partido. Su cálculo
+Este índice se fundamenta en el índice de nacionalización de cada partido. Su cálculo
 se basa en el agregado de puntuaciones de nacionalización de los partidos ponderado con
 el valor del peso electoral ( número de votos obtenidos).Al igual que en el índice de
 Nacionalización de partidos, unos valores cercanos a 1 indicará una fuerte nacionalización

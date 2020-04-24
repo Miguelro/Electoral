@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{L_Tukey}
 \alias{L_Tukey}
-\title{Indice de desproporcionalidad Linea de Tuckey (LT)}
+\title{Indice de desproporcionalidad. Linea de Tuckey (LT)}
 \usage{
 L_Tukey(votes, seats)
 }

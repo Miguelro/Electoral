@@ -41,7 +41,7 @@
 #'@param votos Un vector de números enteros, con los votos de cada partido
 #'@param escanos un número entero conteniendo el total de escaños a repartir
 #'@param metodo Es el método a utilizar los valores admitidos son
-#'  c("Hare","Droop","Imperiali","Mod_Imperiali",hangenbach-bischo").
+#'  c("Hare","Droop","Imperiali","Mod_Imperiali","hangenbach-bischo").
 #'  El valor por defecto es "Hare"
 #'
 #'
@@ -167,7 +167,8 @@ coci<-function(x,metodo,escanos){
 #'@family Reparto Diputados
 #'@seealso \code{\link{Restos_Mayores}} para reparto restos mayores
 #'@seealso [https://en.wikipedia.org/wiki/D\%27Hondt_method](https://en.wikipedia.org/wiki/D\%27Hondt_method) en wikipedia
-#'
+#'@seealso [https://bit.ly/3aEidM9](https://bit.ly/3aEidM9) en wikipedia.
+#'@seealso [https://bit.ly/2Q0a0u0](https://bit.ly/2Q0a0u0) en internet.
 #'
 #'@description Con esta opción se utiliza diversos métodos que tienen
 #'Como carcaterística principal que el número de votos obtenidos por las candidaturas se
@@ -209,7 +210,7 @@ coci<-function(x,metodo,escanos){
 #'@param metodo Es el método a utilizar los valores admitidos son
 #'  c("dhondt","saint_lague","saint_lague_Mod",
 #' "Danish","Imperiali","Hill_Huntington",
-#' "Dean")))
+#' "Dean")
 #'
 #'
 #'@return Devuelve un Dataframe con los nomnbre de los partidos políticos y los

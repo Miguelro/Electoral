@@ -16,7 +16,7 @@ Devuelve el valor obtenido para el índice
 }
 \description{
 Indicador de desproporcionalidad adpatado para aquellos sistemas que utilizan la Ley
-D'Hondt en el reparto de sus escaños, como es el casod de España ( salvo en las elecciones al Senado),
+D'Hondt en el reparto de sus escaños, como es el caso de España ( salvo en las elecciones al Senado),
 presenta la desventaja de que tan sólo tiene en cuenta la diferencia entre escaños y votos sólo
 para la fuerza política más votada. La fórmula que se utiliza para su cálculo es la siguiente:
 \deqn{Lmax=max[|V_i-E_i]}{Lmax=max[|Vi-Ei|]}

@@ -20,7 +20,7 @@ Este indicador propuesto por Molinar ( 1991), intenta evaluar el número relevan
 de partidos que realmente existe en un proceso electoral. Cabe decir de este índice que presenta un
 mejor comportamiento, que los índices del número de partidos e hiperfraccionamiento,tanto en la
 ponderación que hace del partido ganador como en la diferencia que hay entre el primero y el
-segundo partido, así como del grado de concentración de los partidos minoritarios.La formula empleada
+segundo partido, así como del grado de concentración de los partidos minoritarios.La fórmula empleada
 para el cálculo de este índice es la siguiente:
 
 \deqn{NP=1+N^{2}\sum_{i=2}p_{i}^{2}}{NP=1+N^2*sum(pi^2, for i>=2)}

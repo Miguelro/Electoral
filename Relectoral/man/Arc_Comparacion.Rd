@@ -11,11 +11,11 @@ Arc_Comparacion(Partidos1, Partidos2, Escanos1, Escanos2, cols = NULL,
 \arguments{
 \item{Partidos1}{Es un vector de caracteres con los nombres de los partidos del primer proceso}
 
-\item{Partidos2}{Es un vector de carcateres con los nombres de los partidos del segundo proceso}
+\item{Partidos2}{Es un vector de caracteres con los nombres de los partidos del segundo proceso}
 
 \item{Escanos1}{Es un vector de números enteros con los resultados del primer proceso}
 
-\item{Escanos2}{Es un vector de n´meros enteros con los resultados del segundo proceso}
+\item{Escanos2}{Es un vector de números enteros con los resultados del segundo proceso}
 
 \item{cols}{Es un vector conteniendo los colores a utilizar en la elaboración del gráfico}
 
@@ -26,7 +26,7 @@ Arc_Comparacion(Partidos1, Partidos2, Escanos1, Escanos2, cols = NULL,
 
 \item{titu2}{Expresión a utilizar para nombrar el segundo proceso}
 
-\item{titulo}{Para indicar el título a colocar en el gráfico}
+\item{titulo}{Para indicar el título a colocar en el gráfico global.}
 }
 \value{
 Se obtiene un objeto del tipo ggplot que contiene dos gráficos representativos
@@ -35,7 +35,7 @@ de los dos arcos parlamentarios a comparar.
 \description{
 Con este gráfico se obtendrán dos arcos parlamentarios con la finalidad de
 poder comparar la estructura de los mismos, es decir los resultados obtenidos en dos
-procesos electorales.
+procesos electorales diferentes.
 }
 \examples{
 

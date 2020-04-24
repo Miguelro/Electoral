@@ -1,6 +1,6 @@
 #En este fichero desarrollamos todos los indices electrorales
 
-#'@title Indice de RAE-1971 ("R")
+#'@title Indice de desproporcionalidad de RAE-1971 ("R")
 #'
 #'@describeIn Indicadores de desproporcionalidad
 #'@section Indicadores
@@ -13,7 +13,7 @@
 #'
 #'Para calcular su valor hay que introducir como parámetros de la fórmula los vectores de números
 #'enteros que se corresponden con los votos obtenidos por cada partido y los escaños conseguidos.
-#'El código R se encargará de calcular los porcentajes correspondientes, para la obtención del índice.
+#'El código R se encargará de calcular los porcentajes correspondientes para la obtención del índice.
 #'
 #'@param votes Es un vector de números enteros, conteniendo los votos de todas las candidaturas.
 #'@param seats Es un vector de números enteros, conteniendo los escaños obtenidos por las candidaturas
@@ -40,10 +40,10 @@ Rae <- function(votes, seats){
 Rae(c(1200, 30, 4000),c(10,6,8))
 
 
-#'@title Indice de RAE corregido ("Rco")
+#'@title Indice de desproporcionalidad de RAE corregido ("Rco")
 #'
 #'@description Fue el propio Rae el que se dio cuenta de los problemas que se generaban en el
-#'cálculo del índice al tener en cuenta todos los partidos. Por este motivo hizo una revisión
+#'cálculo del índice RAE al tener en cuenta todos los partidos. Por este motivo hizo una revisión
 #'del mismo y decidió excluir del cálculo todos partidos que no lleguen al 0.5 por ciento de los
 #'votos. En la función creada para calcular este índice por defecto toma este valor corrector, aunque
 #'se permite introducir otro valor, como se puede ver en el ejemplo que se presenta líneas abajo.
@@ -54,7 +54,8 @@ Rae(c(1200, 30, 4000),c(10,6,8))
 #'
 #'@param votes Es un vector de números enteros, conteniendo TODOS los votos de todas las candidaturas.
 #'@param seats Es un vector de números enteros, conteniendo TODOS los escaños obtenidos por las candidaturas
-#'@param correc Es un valor decimal qu indica el porcentaje de votos que sirve de corte
+#'@param correc Es un valor decimal que indica el porcentaje de votos que sirve de corte.
+#Por defecto su valor es 0.5.
 #'
 #'@return Devuelve el valor obtenido para el índice
 #'
@@ -83,10 +84,10 @@ Rae_corregido <- function(votes, seats, correc = 0.5){
 Rae_corregido(c(1200, 30, 4000),c(10,6,8), correc = 1)
 Rae_corregido(c(1200, 30, 4000),c(10,6,8))
 
-#' @title Indice de Loosemore y Hanby-1971 ("LH")
+#' @title Indice de desproporcionalidad de Loosemore y Hanby-1971 ("LH")
 #'
 #' @description El índice de Loosemore y Hanby ( 1971 ) pretende solventar las dificultades encontradas
-#' con el índice de RAE. Para calclar este índice de desproporcionalidad, lo que se hace es sumar los
+#' con el índice de RAE. Para calcular este índice de desproporcionalidad, lo que se hace es sumar los
 #' valores absolutos de las diferencias entre votos y escaños y dividir el resultado entre dos. La
 #' fórmula concreta que se utiliza es la siguiente:
 #' '\deqn{LH=\frac{\sum_{i=1}^{n}|E_{i}-V_{i}|}{2}}{LH = (1/2)*sum(|Vi-Ei|)}
@@ -115,7 +116,7 @@ Loos_Hanby <-  function(votes, seats){
 
 Loos_Hanby(c(1200, 30, 4000),c(10,6,8))
 
-#' @title Indice de los cuadrados minimos de Gallagher-1991 (Gcm)
+#' @title Indice de desproporcionalidad de los cuadrados minimos de Gallagher-1991 (Gcm)
 #'
 #' @description El índice de desproporcionalidad electoral de los cuadrados mínimos de Gallagher, utiliza
 #' una fórmula algo más elaborada que los índices anteriores (R, LH) para ello calcula las diferencias
@@ -196,7 +197,7 @@ Sainte_Lague(c(3947,3189,1971,466,345,82),c(184,99,44,10,1,0))
 #'@title Indice de desproporcionalidad de maxima desviacion (Lmax)
 #'
 #'@description Indicador de desproporcionalidad adpatado para aquellos sistemas que utilizan la Ley
-#'D'Hondt en el reparto de sus escaños, como es el casod de España ( salvo en las elecciones al Senado),
+#'D'Hondt en el reparto de sus escaños, como es el caso de España ( salvo en las elecciones al Senado),
 #'presenta la desventaja de que tan sólo tiene en cuenta la diferencia entre escaños y votos sólo
 #'para la fuerza política más votada. La fórmula que se utiliza para su cálculo es la siguiente:
 #'\deqn{Lmax=max[|V_i-E_i]}{Lmax=max[|Vi-Ei|]}
@@ -227,7 +228,7 @@ L_max <- function(votes, seats){
 
 L_max(c(3947,3189,1971,466,345,82),c(184,99,44,10,1,0))
 
-#'@title  Indice de desproporcionalidad de Cox_Shugart-1991 ( CS )
+#'@title  Indice de desproporcionalidad. de Cox_Shugart-1991 ( CS )
 #'
 #'@description El índice de desproporcionalidad de Cox_Shugart (1991) mide la desproporción en el
 #'reparto de escaños mediante una línea de regresión entre el porcentaje de escaños y el porcentaje
@@ -291,7 +292,7 @@ Cox_Shugart_correg<- function(votes,seats){
 
 Cox_Shugart_correg(c(3947,3189,1971,466,345,82),c(184,99,44,10,0,0))
 
-#'@title Indice de desproporcionalidad Linea de Tuckey (LT)
+#'@title Indice de desproporcionalidad. Linea de Tuckey (LT)
 #'
 #'@description Este indicador también se denomina índice de sesgo robustos, y el resultado se obtiene
 #'mediante la utilización de la pendiente de la conocida "Linea de Tuckey" y su utilización queda recomendada
@@ -329,9 +330,9 @@ L_Tukey(c(3947,3189,1971,466,345,82),c(184,99,44,10,0,0))
 
 #### Dimension del voto del sistemas de partidos ###
 
-#'@title Indice Dmension de voto de fragmentacion ( electoral y parlamentaria) de Rae ( F )
+#'@title Indice Dimension de voto de fragmentacion ( electoral y parlamentaria) de Rae ( F )
 #'
-#'@description Este indicador pretende resumir en un valor el nivel de dispersión o concentración de
+#'@description Este indicador pretende resumir en un valor el nivel de dispersión o concentración del
 #'poder político, es decir y de forma resumida si se encuentra concentrado o no los escaños o votos
 #'recibidos en una serie de partidos polítcos. Los valores del índice varían entre 0 y 1, de forma que
 #'un valor cero indica no hay ninguna fragmentación ( todos los votos van a un sólo partido), mientras
@@ -474,7 +475,7 @@ R_nepMolinar2 <- function(datos){
 #'de partidos que realmente existe en un proceso electoral. Cabe decir de este índice que presenta un
 #'mejor comportamiento, que los índices del número de partidos e hiperfraccionamiento,tanto en la
 #'ponderación que hace del partido ganador como en la diferencia que hay entre el primero y el
-#'segundo partido, así como del grado de concentración de los partidos minoritarios.La formula empleada
+#'segundo partido, así como del grado de concentración de los partidos minoritarios.La fórmula empleada
 #'para el cálculo de este índice es la siguiente:
 #'
 #'\deqn{NP=1+N^{2}\sum_{i=2}p_{i}^{2}}{NP=1+N^2*sum(pi^2, for i>=2)}
@@ -517,7 +518,7 @@ R_concentracion <- function(datos){
 
 #'@title Indice Dimension de voto.Concentracion del voto ( electoral y parlamentario)
 #'
-#'@description Otro indicador muy importante del sistema de partidos es el de concentracón del voto,
+#'@description Otro indicador muy importante del sistema de partidos es el de concentración del voto,
 #'que indica qué porcentaje de votos o escaños se llevan los dos partidos que tienen el mayor
 #'número de votos. La fórmula utilizada para calcular este indicador es la siguiente:
 #'
@@ -563,9 +564,9 @@ R_competitividad <- function(datos){
 #'
 #'@description Con este índice se va a medir el nivel de rivalidad electoral que existe en un
 #'determinado sistema de partidos entre el primer y el segundo ganador de unas elecciones. Este indicador
-#'por lo tano va a poner de manifiesto cuánta rivalidad hay entre los dos partidos que mayor número
-#'de votos han obtenido. Para medir este fenómeno se uutiliza la aproximación o lejanía de los resultados
-#'de las dos formaciones políticas más votadas. El calculo de este indicador se hace mediante la
+#'por lo tanto va a poner de manifiesto cuánta rivalidad hay entre los dos partidos que mayor número
+#'de votos han obtenido. Para medir este fenómeno se utiliza la aproximación o lejanía de los resultados
+#'de las dos formaciones políticas más votadas. El cálculo de este indicador se hace mediante la
 #'formula siguiente:
 #'
 #'\deqn{competitividad=1-(p_1-p_2)=}{competitividad=1-(p1-p2)}
@@ -656,7 +657,7 @@ INP<-function(dat){
 #'@title Indice Nacionalizacion del Sistema de Partidos (INSP)
 #'
 #'
-#'@description Este índice se basa en el índice de nacionalización de cada partido. Su cálculo
+#'@description Este índice se fundamenta en el índice de nacionalización de cada partido. Su cálculo
 #'se basa en el agregado de puntuaciones de nacionalización de los partidos ponderado con
 #'el valor del peso electoral ( número de votos obtenidos).Al igual que en el índice de
 #'Nacionalización de partidos, unos valores cercanos a 1 indicará una fuerte nacionalización
@@ -719,27 +720,48 @@ INSP <- function(datos){
 #'
 #'@description Este índice de nacionalización, cuyo valor oscila entre 0 y 1, fue propuesto por
 #'Lago y Montero (2010).Este índice se basa en la decisión de entrada de los partidos en la
-#'competencia electoral en todos los distritos o solo en algunos. Para su cáculo tiene en cuenta
+#'competencia electoral en todos los distritos o solo en algunos. Para su cálculo se tiene en cuenta
 #'los resultados electorales de los partidos, así como el número de escaños de los distritos
 #'donde se presentan. La fórmula que utiliza es la siguiente:
 #'
 #'\deqn{E=\sum_{j=1}^{J}p_{j}^{e}*q_{j}}{E=sum(p_j*q_j;j=1,2,..,J)}
 #'
 #'Donde:
-#'p_j es el tanto por uno de los votos obtenidos en todos el territorio sobre el total
+#'p_j es el tanto por uno de los votos obtenidos en todos el territorios sobre el total
 #'q_j es el tanto por uno de escaños ( sobre el total de escaños) de las circunscripciones
 #'en las que la formación política j se presenta.
 #'
-#'@param Ano Es el valor del año de los datos que se quieren descagar. Este dato puede ser
-#'numérico o de tipo carácter ( mejor numérico)
-#'@param Mes Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
+#'Se han habilitado dos procedimentos para el cálculo de este indice, a uno se le denominará
+#'automático  y al otro manual. Con el procedimiento automático se conectará con los
+#'datos del Ministerio del Interior español y sin mayor intevención se calculará el indicador
+#'para las elecciones a Cortes Generales que se haya indicado con los parámetros de la
+#'fórmula. Para el procedimiento manual, se deden pasar los datos que se quieren procesar,
+#'tal y como se indica a continuación en el apartado de parámetros
+#'
+#'@param Ano ( Sólo para caso automático) Es el valor del año de los datos que se quieren descagar. Este dato puede ser
+#'numérico o de tipo carácter (preferiblemente numérico)
+#'@param Mes ( Sólo para caso automático) Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
 #'de tipo carácter y a dos dígitos, es decir "04" es válido pero "4" no es válido
-#'@param Ruta Se debe indicar una ruta del disco duro local donde se descarga el
-#'fichero del Ministerior del Interior. Una vez finalizada la descarga de forma automática
+#'@param Ruta ( Sólo para caso automático) Se debe indicar una ruta del disco duro local donde se descarga el
+#'fichero del Ministerior del Interior. Una vez finalizada la descarga y de forma automática
 #'el fichero descargado se borra.
-#'@param n_escanos Es el número total de escaños que se deben cubrir. Por defectos tiene
+#'@param n_escanos ( Sólo para caso automático) Es el número total de escaños que se deben cubrir. Por defecto tiene
 #'un valor de 350 que son los diputados que se eligen al Congreso de los Diputados en
 #'España.
+#'@param Auto Contiene un valos lógico que por defecto vale TRUE, indicativo de que se haga
+#'el procedimiento automático. Si se le pasa otro valor entonces el procedimiento sería
+#'manual.
+#'@param d_votos (Sólo para procedimiento manual). Es un data.frame, conteniendo en la primera
+#'columna la denominación de las regiones o circunscripciones. El resto de las columnas se
+#'debe haber una por cada partido político que contenga los votos que ese partido ha tenido
+#'en cada una de las circunscripciones, y la denominación de esa columna, serán las
+#'siglas de ese partido.
+#'@param d_escanos (Sólo para procedimiento manual).Es un data.frame con dos columnas.La
+#'primera contiene la denominación de las regiones o circunscripcones, que deben ser
+#'iguales y estar en el mismo orden que están en el data.frame al que
+#'se hace referencia en el parámetro d_votos. La segunda columna debe
+#'contener el número de escaños que corresponde a cada región o circunscripción
+#'electoral
 #'
 #'@return El valor devuelto es un objeto de tipo list, con tres posiciones. La primera
 #'posición contiene el valor del índice ( se denomina 'V_indice'), la segunda el vector
@@ -749,66 +771,175 @@ INSP <- function(datos){
 #'cuestión. Su denominación es 'Porcentaje_escanos'.
 #'
 #'@examples
+#'#Procedimiento automático
 #'s<-IN_LAGO_MONTERO(2019,"04","D:/",n_escanos = 350)
 #'s$V_indice
 #'s$Porcentaje_votos
 #'s$Porcentaje_escanos
 #'
+#'#Procedimiento manual
+#'da1 <- data.frame( # Contiene los votos
+#'  Reg=c("Alava","Albacete","Madrid","Barcelona","Valladolid"),
+#'  PSOE=c(400,300,0,50,25),
+#'  PP=c(300,200,10,150,2),
+#'  Cs=c(400,0,3,300,45),
+#'  Uno=c(465,23,341,263,0))
 #'
+#'da2 <- data.frame( # Contiene los escaños totales de cada provincia
+#'  Reg=c("Alava","Albacete","Madrid","Barcelona","Valladolid"),
+#'  escanos=c(2,3,6,5,4))
+#'
+#'s2<-IN_LAGO_MONTERO(Auto = FALSE,d_votos = da1,d_escanos = da2)
 #'@export
+IN_LAGO_MONTERO<-function(Ano,Mes,Ruta,n_escanos=350,Auto=TRUE,d_votos,d_escanos){
+  if(Auto == TRUE){
+    if( class(Mes) != "character") stop( " El mes debe ser de tipo car\u00E1cter")
+    if(nchar(Mes) != 2) stop("El mes debe contener dos caracteres")
+    if(is.null(Ruta)) stop("Se debe facilitar alg\u00FAn valor para 'Ruta'")
+    # Indice de nacionalización de Lago y Montero
 
-IN_LAGO_MONTERO<-function(Ano,Mes,Ruta,n_escanos=350){
-  if( class(Mes) != "character") stop( " El mes debe ser de tipo car\u00E1cter")
-  if(nchar(Mes) != 2) stop("El mes debe contener dos caracteres")
-  if(is.null(Ruta)) stop("Se debe facilitar alg\u00FAn valor para 'Ruta'")
-  # Indice de nacionalización de Lago y Montero
+    datos_MIR<-suppressMessages(Agregado_Prov_MIR(Ano,Mes,"Congreso",Ruta,Borrar=T))
+    datos_MIR<-datos_MIR[1:52,]
+    #Me quedo con la columna de los votos
+    # Mediante expresión regular selecciono las columnas que tienen el número de votos
+    columnas_Votos<-grep("V_",colnames(datos_MIR))
+    # Me quedo solo con las columna de votos
+    datos_MIR_Votos<-as.data.frame(datos_MIR[,columnas_Votos])
+    # Transformo los datos a numéricos
+    datos_MIR_Votos <- as.data.frame(apply(datos_MIR_Votos,2,as.integer))
+    #calculo los totales
+    totales<-colSums(datos_MIR_Votos)
+    #Tantos por uno
+    totales_por<-totales/sum(totales)
+    #Calculo para cada provincia los escaños que tiene
 
-  datos_MIR<-Agregado_Prov_MIR(Ano,Mes,"Congreso",Ruta,Borrar=T)
-  datos_MIR<-datos_MIR[1:52,]
-  #Me quedo con la columna de los votos
-  # Mediante expresión regular selecciono las columnas que tienen el número de votos
-  columnas_Votos<-grep("V_",colnames(datos_MIR))
-  # Me quedo solo con las columna de votos
-  datos_MIR_Votos<-as.data.frame(datos_MIR[,columnas_Votos])
-  # Transformo los datos a numéricos
-  datos_MIR_Votos <- as.data.frame(apply(datos_MIR_Votos,2,as.integer))
-  #calculo los totales
-  totales<-colSums(datos_MIR_Votos)
-  #Tantos por uno
-  totales_por<-totales/sum(totales)
-  #Calculo para cada provincia los escaños que tiene
+    # Mediante expresión regular selecciono las columnas que tienen el número de escanos
+    columnas_escanos<-grep("D_",colnames(datos_MIR))
+    #extraigo las columnas con datos de escaños
+    datos_MIR_escanos <- as.data.frame(datos_MIR[,columnas_escanos])
+    #transformo los datos a numericos
+    datos_MIR_escanos <- as.data.frame(apply(datos_MIR_escanos,2,as.integer))
+    #Ahora saco los escaños que tiene cada provncia
+    escanos_prov<-rowSums(datos_MIR_escanos)
 
-  # Mediante expresión regular selecciono las columnas que tienen el número de escanos
-  columnas_escanos<-grep("D_",colnames(datos_MIR))
-  #extraigo las columnas con datos de escaños
-  datos_MIR_escanos <- as.data.frame(datos_MIR[,columnas_escanos])
-  #transformo los datos a numericos
-  datos_MIR_escanos <- as.data.frame(apply(datos_MIR_escanos,2,as.integer))
-  #Ahora saco los escaños que tiene cada provncia
-  escanos_prov<-rowSums(datos_MIR_escanos)
+    #Detectamos en que provincia se han presentado los partidos mediante
+    # el número de votos, si es cero no se presentan y en caso contrario si
+    # Se hace mediante na matriz de valores lógicos
 
-  #Detectamos en que provincia se han presentado los partidos mediante
-  # el número de votos, si es cero no se presentan y en caso contrario si
-  # Se hace mediante na matriz de valores lógicos
+    presentado<-datos_MIR_Votos>0
+    # Calculo lo escaños de la provincias donde se presentan
+    n<-ncol(datos_MIR_escanos)
+    esca_presentado<-rep(NA,n)
+    for(i in 1:n){
+      esca_presentado[i]<-sum(presentado[,i]*escanos_prov)
 
-  presentado<-datos_MIR_Votos>0
-  # Calculo lo escaños de la provincias donde se presentan
-  n<-ncol(datos_MIR_escanos)
-  esca_presentado<-rep(NA,n)
-  for(i in 1:n){
-    esca_presentado[i]<-sum(presentado[,i]*escanos_prov)
+    }
+    esca_presentado<-esca_presentado/n_escanos
+    re<-list()
+    re[[1]]<-sum(esca_presentado*totales_por)
+    re[[2]]<-as.numeric(totales_por)
+    re[[3]]<-as.numeric(esca_presentado)
+    names(re)<-c("V_indice","Porcentaje_votos","Porcentaje_escanos")
+    #re$Porcentaje_votos
+    #re$Porcentaje_escanos
+    return(re)
+  }#Fin del TRUE
+  else{
+    if(missing(d_votos)) stop("Debe facilitarse un data.frame con los datos de votos")
+    if(missing(d_escanos)) stop("Debe facilitarse un data.frame con los datos de esca\u00F1s")
+    if(class(d_votos) != "data.frame") stop("El par\u00E1metro 'd_votos' debe ser un data.frame")
+    if(class(d_escanos) != "data.frame") stop("El par\u00E1metro 'd_escanos' debe ser un data.frame")
 
-  }
-  esca_presentado<-esca_presentado/n_escanos
-  re<-list()
-  re[[1]]<-sum(esca_presentado*totales_por)
-  re[[2]]<-as.numeric(totales_por)
-  re[[3]]<-as.numeric(esca_presentado)
-  names(re)<-c("V_indice","Porcentaje_votos","Porcentaje_escanos")
-  re$Porcentaje_votos
-  re$Porcentaje_escanos
-  return(re)
+    # compruebo que el numero de filas es el mismo
+    if(nrow(d_votos) != nrow(d_escanos)) stop("Deben coincider el n\u00FA de filas de los
+                                              dos data.frame")
+    #Comparo que los nombres de las regiones son los mismo
+    b <- as.character(d_votos[,1]) == as.character(d_escanos[,1])
+    if(sum(b) != nrow(d_votos)) stop("Los nombres de las regiones ('primera columa') deben
+                                     ser iguales en los dos data.frame")
+    #Calculo los totales de los votos
+    totales <- colSums(d_votos[,-c(1)])
+    #Tantos por uno a nivel nacional
+    totales_por <- totales/sum(totales)
+
+    #Detectamos en que provincia se han presentado los partidos mediante
+    # el número de votos, si es cero no se presentan y en caso contrario si
+    # Se hace mediante na matriz de valores lógicos
+
+    presentado<-d_votos[,-c(1)]>0
+    # Entresaco los escaños de cada provincia
+    # Me quedo solo con la columna de los escaños
+    escanos_prov <- d_escanos[,2]
+    n <- ncol(d_votos[,-c(1)])
+    esca_presentado <- rep(NA,n)
+    for(i in 1:n){
+      esca_presentado[i] <- sum(presentado[,i]*escanos_prov)
+    }
+
+    #Calculo el total de escaños
+    n_escanos <- sum(escanos_prov)
+    esca_presentado_por <- esca_presentado/n_escanos
+    # Los datos los saco en la siguiente lista
+    re <-list()
+    re[[1]] <- sum(esca_presentado_por*totales_por)
+    re[[2]] <- as.numeric(totales_por)
+    re[[3]] <- as.numeric(esca_presentado_por)
+    names(re)<-c("V_indice","Porcentaje_votos","Porcentaje_escanos")
+    return(re)
+  }#Fin del else
 }
+# IN_LAGO_MONTERO<-function(Ano,Mes,Ruta,n_escanos=350){
+#   if( class(Mes) != "character") stop( " El mes debe ser de tipo car\u00E1cter")
+#   if(nchar(Mes) != 2) stop("El mes debe contener dos caracteres")
+#   if(is.null(Ruta)) stop("Se debe facilitar alg\u00FAn valor para 'Ruta'")
+#   # Indice de nacionalización de Lago y Montero
+#
+#   datos_MIR<-Agregado_Prov_MIR(Ano,Mes,"Congreso",Ruta,Borrar=T)
+#   datos_MIR<-datos_MIR[1:52,]
+#   #Me quedo con la columna de los votos
+#   # Mediante expresión regular selecciono las columnas que tienen el número de votos
+#   columnas_Votos<-grep("V_",colnames(datos_MIR))
+#   # Me quedo solo con las columna de votos
+#   datos_MIR_Votos<-as.data.frame(datos_MIR[,columnas_Votos])
+#   # Transformo los datos a numéricos
+#   datos_MIR_Votos <- as.data.frame(apply(datos_MIR_Votos,2,as.integer))
+#   #calculo los totales
+#   totales<-colSums(datos_MIR_Votos)
+#   #Tantos por uno
+#   totales_por<-totales/sum(totales)
+#   #Calculo para cada provincia los escaños que tiene
+#
+#   # Mediante expresión regular selecciono las columnas que tienen el número de escanos
+#   columnas_escanos<-grep("D_",colnames(datos_MIR))
+#   #extraigo las columnas con datos de escaños
+#   datos_MIR_escanos <- as.data.frame(datos_MIR[,columnas_escanos])
+#   #transformo los datos a numericos
+#   datos_MIR_escanos <- as.data.frame(apply(datos_MIR_escanos,2,as.integer))
+#   #Ahora saco los escaños que tiene cada provncia
+#   escanos_prov<-rowSums(datos_MIR_escanos)
+#
+#   #Detectamos en que provincia se han presentado los partidos mediante
+#   # el número de votos, si es cero no se presentan y en caso contrario si
+#   # Se hace mediante na matriz de valores lógicos
+#
+#   presentado<-datos_MIR_Votos>0
+#   # Calculo lo escaños de la provincias donde se presentan
+#   n<-ncol(datos_MIR_escanos)
+#   esca_presentado<-rep(NA,n)
+#   for(i in 1:n){
+#     esca_presentado[i]<-sum(presentado[,i]*escanos_prov)
+#
+#   }
+#   esca_presentado<-esca_presentado/n_escanos
+#   re<-list()
+#   re[[1]]<-sum(esca_presentado*totales_por)
+#   re[[2]]<-as.numeric(totales_por)
+#   re[[3]]<-as.numeric(esca_presentado)
+#   names(re)<-c("V_indice","Porcentaje_votos","Porcentaje_escanos")
+#   re$Porcentaje_votos
+#   re$Porcentaje_escanos
+#   return(re)
+# }
 
 #s<-IN_LAGO_MONTERO(2019,"04","D:/",n_escanos = 350)
 #s$V_indice
@@ -818,10 +949,10 @@ IN_LAGO_MONTERO<-function(Ano,Mes,Ruta,n_escanos=350){
 
 ### Injusticia matemática (IM) ####
 
-#'@title Indice Dimension de voto.Injusticia matematica ( IM )
+#'@title utilidades.Injusticia matematica ( IM )
 #'
 #'@description Este indicador fue propuesto por Edward V.Huntington y lo que mide es el nivel
-#'de "injusticia" que se produce en un sistema electoral, al traducir los votos conseguidos
+#'de "injusticia" que se produce en un sistema electoral al traducir los votos conseguidos
 #'por las formaciones políticas en escaños. En este sentido Edward V.Huntington, definió
 #'esta injusticia matemática entre dos partidos que compiten en un proceso electoral como
 #'la diferencia en valor absoluto entre los cocientes de escaños y votos obtenidos por

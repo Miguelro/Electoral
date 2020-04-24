@@ -4,27 +4,48 @@
 \alias{Bazi}
 \title{utilidades.Generacion de ficheros *.bazi}
 \usage{
-Bazi(Ano, Mes, camino, cota = 3)
+Bazi(Ano = 0, Mes, camino = "", cota = 3, Auto = TRUE, votes,
+  seats, Titulo = "")
 }
 \arguments{
-\item{Ano}{Es el valor del año de los datos que se quieren descagar. Este dato puede ser
+\item{Ano}{. Sólo para procedimiento automático.Es el valor del año de los datos que se quieren descagar. Este dato puede ser
 numérico o de tipo carácter ( mejor numérico)}
 
-\item{Mes}{Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
+\item{Mes}{. Sólo para procedimiento automático. Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
 de tipo carácter y a dos dígitos, es decir "04" es válido pero "4" no es válido}
 
-\item{camino}{Se debe indicar una ruta del disco duro local donde se descarga el
+\item{camino}{. Para procedimiento manual y automático. Se debe indicar una ruta del disco duro local donde se descarga el
 fichero del Ministerior del Interior ( finalizado el proceso se borra de forma automática),
-y done se escribirá el fichero con extensión '.bazi' listo para ser usado por BAZI.}
+y done se escribirá el fichero con extensión '.bazi' listo para ser usado por BAZI. Tener en cuenta que esta ruta debe indicar
+un lugar con permiso de escritura por parte de R.}
 
-\item{cota}{Es la barrera eletoral que se quiera utilizar. En el caso del Conreso de
+\item{cota}{. Sólo procedimiento automático.Será la barrera eletoral que se quiera utilizar. En el caso del Conreso de
 los Diputados en España es del 3 por ciento (partidos con menos del 3 por ciento de
 los votos válidos o entran en el reparto), y es el valor que se le ha asignado por defecto.}
+
+\item{Auto}{. Procedimiento manual y automático. Si es igual a TRUE se ejecuta el procedimiento
+automático, en caso contrario será el procedimiento manual el que se lleve a cabo.}
+
+\item{votes}{. Sólo procedimiento manual. Debe ser un objeto de tipo dataframe con la siguiente estructura
+por columnas: La primera columna debe contener la denominación de las circunscripciones electorales a tener en cuenta.
+Y después habrá una columna por cada partido político que se quiera tener en cuenta,
+de tal manera que una columna estará identificada por la sigla del partido correspondiente,
+y contendrá los votos de esa formación en cada una de las circunscripciones que se presente.
+Donde no se presente, o no llegue a superar la barrera electoral que se quiera tener en cuenta,
+se añadirá un valor de cero, de tal forma que la función Bazi() tiene en cuenta esta circunstancia
+para no contabilizar estos casos en la generación del fichero final ( el fichero que tiene la extensión ".bazi").}
+
+\item{seats}{. Sólo procedimiento manual.  Es un dataframe con dos columnas. En la primera se indican las denominaciones de las circunscripciones
+electorales ( que deben tener la misma denominación y estar en el mismo orden que las que se han indicado en
+el dataframe "votes" ) y en la segunda columna, se indicarán los diputados a elegir en cada circunscripción electoral.}
+
+\item{Titulo}{. Sólo procedimiento manual. Debe ser una cadena de caracteres que son las que encabezan el fichero con extensión ".bazi" que se genera.}
 }
 \value{
 El resultado es un fichero ASCII plano con una estructura de información propia
 para ser leido por BAZI y que tiene la siguiente denominación genérica 'Congreso_AAAA_MM.bazi',
-donde AAAA es el año del proceso electoral y MM el mes a dos dígitos.
+donde AAAA es el año del proceso electoral y MM el mes a dos dígitos. En el caso de utilizar
+un procedimiento manual el fichero tendrá denominación "Congreso.bazi".
 }
 \description{
 BAZI es un programa Java disponible gratuitamente que implementa varios
@@ -36,8 +57,44 @@ Instrucciones sobre su uso se pueden en contrar en la siguiente dirección web:
 Con esta función lo que se obtienen son fichero de tipo ASCII planos, con extensión '.bazi'
 que tienen una estructura enfocada a que su información pueda ser entendida por
 BAZI y obtener los resultados que se pueden entresacar con esta aplicación.
+Esta función se ha generado para que pueda ser utilizada de forma automática o manual, es decir,
+trabajará autónomamente si después de darle los parámetros correspondientes se conecta a las
+bases de datos del Ministerio del Interior español, descarga los resultados y genera el
+fichero con extensión «.bazi» correspondiente. El formato manual, está pensado para darle
+los datos adecuados y que la función se encargue de transformarlos al formato que BAZI
+entiende para poder generar los resultados para los que está programado.
+Veamos a continuación cómo proceder en cada caso.
+
+En primer lugar se debe matizar que el parámetro «camino» es preciso facilitarlo tanto con el
+procedimiento manual como el automático, y con él lo que se indica es el camino que debe seguir
+para almacenar el fichero con extensión «.bazi» que se genera. También hay que tener en cuenta
+que se debe facilitar una ruta con permiso de escritura para R.
+
+El procedimiento manual o automática se indica con el parámetro «Auto» de la función Bazi(),
+de tal manera que si vale «TRUE» ( valor por defecto ), se ejecutará el procedimiento automático
+y en otro caso el manual.
 }
 \examples{
 Bazi(Ano = 2019,"04","D:/")
+
+# Ejemplo manual
+
+vo <- data.frame(
+ circu=c("c1","c2","c3","c4","c5","c6","c7","c8","c9"),
+ p1=c(200,300,0,0,250,360,145,0,0),
+ p2=c(0,0,450,467,576,346,234,0,437),
+ p3=c(243,567,0,0,345,634,456,634,0),
+ p4=c(0,367,384,134,267,0,0,364,146),
+ p5=c(345,123,234,254,123,543,342,45,0),
+ p6=c(23,45,234,0,0,354,254,56,123)
+)
+
+se <- data.frame(
+ circu=c("c1","c2","c3","c4","c5","c6","c7","c8","c9"),
+ dip=c(3,4,5,3,2,6,2,4,3)
+)
+
+Bazi(camino="D:/",Auto=FALSE, votes=vo,seats=se, Titulo="Fichero_prueba")
+
 
 }

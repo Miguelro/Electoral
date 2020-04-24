@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{Rae}
 \alias{Rae}
-\title{Indice de RAE-1971 ("R")}
+\title{Indice de desproporcionalidad de RAE-1971 ("R")}
 \usage{
 Rae(votes, seats)
 }
@@ -23,7 +23,7 @@ for \eqn{i = 1, 2, \ldots,n}
 
 Para calcular su valor hay que introducir como parámetros de la fórmula los vectores de números
 enteros que se corresponden con los votos obtenidos por cada partido y los escaños conseguidos.
-El código R se encargará de calcular los porcentajes correspondientes, para la obtención del índice.
+El código R se encargará de calcular los porcentajes correspondientes para la obtención del índice.
 }
 \section{Functions}{
 \itemize{

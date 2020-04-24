@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{Cox_Shugart}
 \alias{Cox_Shugart}
-\title{Indice de desproporcionalidad de Cox_Shugart-1991 ( CS )}
+\title{Indice de desproporcionalidad. de Cox_Shugart-1991 ( CS )}
 \usage{
 Cox_Shugart(votes, seats)
 }

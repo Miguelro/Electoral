@@ -7,7 +7,7 @@
 get_Provincias()
 }
 \value{
-Devuelve un dataframe con dos columnas. La primera columna contiene el código de la
+Devuelve un dataframe con dos columnas. La primera contiene el código de la
 provincia y el segundo campo la denominación de esa provincia.
 }
 \description{

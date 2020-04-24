@@ -18,9 +18,9 @@ respectivamente el valor del índice de competitividad electoral o el parlamenta
 \description{
 Con este índice se va a medir el nivel de rivalidad electoral que existe en un
 determinado sistema de partidos entre el primer y el segundo ganador de unas elecciones. Este indicador
-por lo tano va a poner de manifiesto cuánta rivalidad hay entre los dos partidos que mayor número
-de votos han obtenido. Para medir este fenómeno se uutiliza la aproximación o lejanía de los resultados
-de las dos formaciones políticas más votadas. El calculo de este indicador se hace mediante la
+por lo tanto va a poner de manifiesto cuánta rivalidad hay entre los dos partidos que mayor número
+de votos han obtenido. Para medir este fenómeno se utiliza la aproximación o lejanía de los resultados
+de las dos formaciones políticas más votadas. El cálculo de este indicador se hace mediante la
 formula siguiente:
 
 \deqn{competitividad=1-(p_1-p_2)=}{competitividad=1-(p1-p2)}

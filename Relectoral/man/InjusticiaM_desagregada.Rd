@@ -2,28 +2,40 @@
 % Please edit documentation in R/Utilidades.R
 \name{InjusticiaM_desagregada}
 \alias{InjusticiaM_desagregada}
-\title{utilidades. Calculo de Injusticia Matematica, desagregada
-
-'@section utilidades}
+\title{utilidades. Calculo de Injusticia Matematica, desagregada}
 \usage{
-InjusticiaM_desagregada(Ano, Mes, Ruta)
+InjusticiaM_desagregada(Ano, Mes, Ruta, Auto = TRUE, d_votos, d_escanos)
 }
 \arguments{
-\item{Ano}{Es el valor del año de los datos que se quieren descagar. Este dato puede ser
-numérico o de tipo carácter ( mejor numérico)}
+\item{Ano}{( obigatorio si Auto=TRUE) Es el valor del año de los datos que se quieren
+descagar. Este dato puede ser numérico o de tipo carácter ( mejor numérico)}
 
-\item{Mes}{Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
+\item{Mes}{( obigatorio si Auto=TRUE) Es el mes en el que se ha realizado la elección. Obligatoriamente tiene que ser
 de tipo carácter y a dos dígitos, es decir "04" es válido pero "4" no es válido}
 
-\item{Ruta}{Se debe indicar una ruta del disco duro local donde se descarga el
+\item{Ruta}{( obigatorio si Auto=TRUE) Se debe indicar una ruta del disco duro local donde se descarga el
 fichero del Ministerior del Interior. Una vez finalizada la descarga de forma automática
 el fichero descargado se borra.}
+
+\item{Auto}{Su valor por defecto es TRUE e indica que el procedimiento es automático, con
+otro valor se ejecutará el proceso no automático}
+
+\item{d_votos}{(Obligatorio si Auto != TRUE). Es un data.frame con la primera columna que
+contiene la deniminación de la región, y después una columna para cada partido que se
+quiera evaluar, y que contendrán los votos obtenidos en cada región contemplada.}
+
+\item{d_escanos}{(Obligatorio si Auto != TRUE).Es un data.frame con la primera columna que
+contiene la deniminación de la región, y después una columna para cada partido que se
+quiera evaluar, y que contendrán los escaños obtenidos en cada región contemplada.}
 }
 \value{
-El resultado es una lista con 53 elementos, de manera que cada elemento es una
-matriz que contiene los datos de las injusticia matemática calculada. Los 'names' de esta
-lista son los códigos de provincia ( códigos INE), o bien la expresión 'Total' si son los datos
+El resultado es una lista con 53 elementos ( para proceddimiento automático),
+de manera que cada elemento es una matriz que contiene los datos de las injusticia matemática calculada.
+Los 'names' de esta lista son las de provincia españolas, o bien la expresión 'Total' si son los datos
 de toda España.
+Cuando el procedimiento no se automático, también se obtiene una lista conteniendo un
+número de elementos igual al número de regiones facilitadas más uno, ya que hay un elemento
+denominado 'Total' que hace referencia al conjunto de territorios facilitados.
 }
 \description{
 La función de este mismo paquete denominada 'InjusticiaM()', permite obtener
@@ -36,8 +48,32 @@ que gracias a esta función, se puede extraer de forma automática la informaci�
 Ministerio de Interior, se procesa de forma directa para cada provincia y los datos nacionales
 y se devuelve el resultado en un objeto de tipo list() de R, donde cada elemento se
 corresponde con el resultado obtenido de cada provincia o del Total Nacional.
-}
-\examples{
-f<-InjusticiaM_desagregada(2019,"04","D:/")
 
+Igualmente, si se tiene otro tipo de elección, se puede utilizar el parámetro Auto=FALSE,
+y se proporcionarán dos data.frame con las características que se indicarán más adelante
+y se esta manera se calcularán las injusticias matemáticas para cada región que se indique
+en esos data.frame
+}
+\section{utilidades}{
+NA
+}
+
+\examples{
+f<-InjusticiaM_desagregada(2019,"04","D:/") # Modo agregado
+
+da1 <- data.frame( # Contiene los votos
+   Reg=c("Alava","Albacete","Madrid","Barcelona","Valladolid"),
+     PSOE=c(400,300,0,50,25),
+     PP=c(300,200,10,150,2),
+     Cs=c(400,0,3,300,45),
+     Uno=c(465,23,341,263,0))
+
+da2 <- data.frame( #contiene los escaños
+     Reg=c("Alava","Albacete","Madrid","Barcelona","Valladolid"),
+     PSOE=c(4,3,0,0,0),
+     PP=c(2,3,0,1,0),
+     Cs=c(4,0,0,2,1),
+      Uno=c(3,0,3,2,0))
+
+f2<- InjusticiaM_desagregada(Auto=FALSE,d_votos=da1,d_escanos = da2) #No agregegado
 }

@@ -5,9 +5,9 @@
 #'@title utilidades. Codigos de Comunidad Autonoma.
 #'
 #'@description Con esta función se pueden obtener los códigos de las Comunidades Autónomas de España
-#'que utiliza el MIR para codificar sus datos. Estós códigos se pueden
+#'que utiliza el MIR para codificar sus datos. Esta codificación se puede
 #'[ver igualmente en este enlace](https://github.com/Miguelro/Electoral/blob/master/Diseno_Registros_MIR/Diseno_Registros.pdf).
-#'Es de hacer notar que estos códigos no coinciden en su totalidad con los [códigos de Comunidad Autónoma del
+#'Es de hacer notar que este sistema de codificación no coinciden en su totalidad con los [códigos de Comunidad Autónoma del
 #'Instituto Nacional de Estadística](https://www.ine.es/daco/daco42/codmun/cod_ccaa.htm).Esta función
 #'no tiene parámetros.
 #'
@@ -57,7 +57,7 @@ get_CCAA <- function(){
 #'a sus códigos, que coinciden en su integridad con los que facilita el Instituto Nacional de Estadística
 #'[en esta página web](https://www.ine.es/daco/daco42/codmun/cod_provincia.htm). Esta función no tiene parámetros.
 #'
-#'@return Devuelve un dataframe con dos columnas. La primera columna contiene el código de la
+#'@return Devuelve un dataframe con dos columnas. La primera contiene el código de la
 #'provincia y el segundo campo la denominación de esa provincia.
 #'
 #' @examples

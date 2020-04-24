@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{Gallagher}
 \alias{Gallagher}
-\title{Indice de los cuadrados minimos de Gallagher-1991 (Gcm)}
+\title{Indice de desproporcionalidad de los cuadrados minimos de Gallagher-1991 (Gcm)}
 \usage{
 Gallagher(votes, seats)
 }

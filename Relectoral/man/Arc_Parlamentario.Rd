@@ -8,12 +8,12 @@ Arc_Parlamentario(Partidos, Escanos, cols = NULL, repr = c("absolute",
   "proportion"), titulo = "Poner un titulo")
 }
 \arguments{
-\item{Partidos}{es n vector de string's conteniendo los nombres de los partidos.}
+\item{Partidos}{es un vector de string's conteniendo los nombres de los partidos.}
 
 \item{Escanos}{es un vector de números naturales conteniendo los escaños que han correspondido
 a cada partido}
 
-\item{cols}{(Optativo) es un vector conteniendo los nombres de lo colores a usar para dibujar
+\item{cols}{(Optativo) es un vector conteniendo los nombres de los colores a usar para dibujar
 cada zona del arco parlamentario}
 
 \item{repr}{Debe contener la expresión "absolute" o "Proportion" para representar números
@@ -22,17 +22,18 @@ absolutos o relativos}
 \item{titulo}{Para indicar el título a colocar en el gráfico}
 }
 \value{
-devuelve un objeto de la clase ggplot, conteniendo el arco parlamentario obtenido
+devuelve un objeto de la clase ggplot, conteniendo la representación
+del arco parlamentario obtenido.
 }
 \description{
-con esta función se facilitan la representación de la distribución de escaños
-obtenidos por cada uno de los partidos que les corresponde una determinada cantidad de escaños. Se
-puede introducir un título para el gráfico, los colores a utilizar para cada partido, así como
+con esta función se facilita la representación de la distribución de escaños
+obtenidos por cada uno de los partidos que les corresponde alguna representación parlamentaria.
+Se puede introducir un título para el gráfico, los colores a utilizar para cada partido, así como
 elegir si se hace una distribución de los escaños en terminos obsolutos o proporcionales.
 }
 \examples{
 
-bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "Linke", "Grüne", "Fraktionslos"),
+bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "UPyD", "CC", "Verdes"),
 seats   = c(200, 46, 153, 92, 80, 69, 67, 2),
 cols    = c("black", "blue", "red", "lightblue", "yellow", "purple", "lavenderblush", "grey"),
 stringsAsFactors = FALSE)

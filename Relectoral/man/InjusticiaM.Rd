@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{InjusticiaM}
 \alias{InjusticiaM}
-\title{Indice Dimension de voto.Injusticia matematica ( IM )}
+\title{utilidades.Injusticia matematica ( IM )}
 \usage{
 InjusticiaM(dates)
 }
@@ -20,7 +20,7 @@ entrada en la primera columna.
 }
 \description{
 Este indicador fue propuesto por Edward V.Huntington y lo que mide es el nivel
-de "injusticia" que se produce en un sistema electoral, al traducir los votos conseguidos
+de "injusticia" que se produce en un sistema electoral al traducir los votos conseguidos
 por las formaciones políticas en escaños. En este sentido Edward V.Huntington, definió
 esta injusticia matemática entre dos partidos que compiten en un proceso electoral como
 la diferencia en valor absoluto entre los cocientes de escaños y votos obtenidos por

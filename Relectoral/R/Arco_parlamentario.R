@@ -3,15 +3,15 @@
 #if (!require("ggplot2")) install.packages("ggplot2"); require("ggplot2")
 #'@title Graficos. Representacion Arco parlamentario
 #'
-#'@description con esta función se facilitan la representación de la distribución de escaños
-#'obtenidos por cada uno de los partidos que les corresponde una determinada cantidad de escaños. Se
-#'puede introducir un título para el gráfico, los colores a utilizar para cada partido, así como
+#'@description con esta función se facilita la representación de la distribución de escaños
+#'obtenidos por cada uno de los partidos que les corresponde alguna representación parlamentaria.
+#'Se puede introducir un título para el gráfico, los colores a utilizar para cada partido, así como
 #'elegir si se hace una distribución de los escaños en terminos obsolutos o proporcionales.
 #'
-#'@param Partidos es n vector de string's conteniendo los nombres de los partidos.
+#'@param Partidos es un vector de string's conteniendo los nombres de los partidos.
 #'@param Escanos es un vector de números naturales conteniendo los escaños que han correspondido
 #'a cada partido
-#'@param cols (Optativo) es un vector conteniendo los nombres de lo colores a usar para dibujar
+#'@param cols (Optativo) es un vector conteniendo los nombres de los colores a usar para dibujar
 #'cada zona del arco parlamentario
 #'@param repr Debe contener la expresión "absolute" o "Proportion" para representar números
 #'absolutos o relativos
@@ -21,11 +21,12 @@
 #'@import ggforce
 #'
 #'
-#'@return devuelve un objeto de la clase ggplot, conteniendo el arco parlamentario obtenido
+#'@return devuelve un objeto de la clase ggplot, conteniendo la representación
+#'del arco parlamentario obtenido.
 #'
 #'@examples
 #'
-#'bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "Linke", "Grüne", "Fraktionslos"),
+#'bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "UPyD", "CC", "Verdes"),
 #'seats   = c(200, 46, 153, 92, 80, 69, 67, 2),
 #'cols    = c("black", "blue", "red", "lightblue", "yellow", "purple", "lavenderblush", "grey"),
 #'stringsAsFactors = FALSE)
@@ -101,7 +102,7 @@ Arc_Parlamentario <- function(Partidos, Escanos, cols = NULL, repr=c("absolute",
   return(p)
 }
 
-# bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "Linke", "Grüne", "Fraktionslos"),
+# bt <- data.frame(parties = c("PP", "CSU", "SPD", "AfD", "FDP", "UPyD", "CC", "Verdes"),
 #                  seats   = c(200, 46, 153, 92, 80, 69, 67, 2),
 #                  cols    = c("black", "blue", "red", "lightblue", "yellow", "purple", "lavenderblush", "grey"),
 #                  stringsAsFactors = FALSE)
@@ -112,18 +113,18 @@ Arc_Parlamentario <- function(Partidos, Escanos, cols = NULL, repr=c("absolute",
 #'
 #'@description Con este gráfico se obtendrán dos arcos parlamentarios con la finalidad de
 #'poder comparar la estructura de los mismos, es decir los resultados obtenidos en dos
-#'procesos electorales.
+#'procesos electorales diferentes.
 #'
 #'@param Partidos1 Es un vector de caracteres con los nombres de los partidos del primer proceso
-#'@param Partidos2 Es un vector de carcateres con los nombres de los partidos del segundo proceso
+#'@param Partidos2 Es un vector de caracteres con los nombres de los partidos del segundo proceso
 #'@param Escanos1  Es un vector de números enteros con los resultados del primer proceso
-#'@param Escanos2  Es un vector de n´meros enteros con los resultados del segundo proceso
+#'@param Escanos2  Es un vector de números enteros con los resultados del segundo proceso
 #'@param cols Es un vector conteniendo los colores a utilizar en la elaboración del gráfico
 #'@param repr Para indicar "absolute" si se quiere un gráfico en términos absolutos o
 #'"proportion" si se utilizan términos relativos
 #'@param titu1 Expresión a utilizar para nombrar el primer proceso
 #'@param titu2 Expresión a utilizar para nombrar el segundo proceso
-#'@param titulo Para indicar el título a colocar en el gráfico
+#'@param titulo Para indicar el título a colocar en el gráfico global.
 #'
 #'@return Se obtiene un objeto del tipo ggplot que contiene dos gráficos representativos
 #'de los dos arcos parlamentarios a comparar.

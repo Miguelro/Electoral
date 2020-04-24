@@ -2,7 +2,7 @@
 % Please edit documentation in R/Electoral_index.R
 \name{fragmentacion_rae}
 \alias{fragmentacion_rae}
-\title{Indice Dmension de voto de fragmentacion ( electoral y parlamentaria) de Rae ( F )}
+\title{Indice Dimension de voto de fragmentacion ( electoral y parlamentaria) de Rae ( F )}
 \usage{
 fragmentacion_rae(votes, seats)
 }
@@ -16,7 +16,7 @@ Devuelve un dataframe, con las columnas "electoral" y "parlamentario" para alber
 respectivamente el valor del índice de fagmentación electoral o el parlamentario
 }
 \description{
-Este indicador pretende resumir en un valor el nivel de dispersión o concentración de
+Este indicador pretende resumir en un valor el nivel de dispersión o concentración del
 poder político, es decir y de forma resumida si se encuentra concentrado o no los escaños o votos
 recibidos en una serie de partidos polítcos. Los valores del índice varían entre 0 y 1, de forma que
 un valor cero indica no hay ninguna fragmentación ( todos los votos van a un sólo partido), mientras
