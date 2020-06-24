@@ -1,0 +1,14 @@
+Package: Relectoral
+Type: Package
+Title: Analisis Electoral 
+Version: 0.1.0
+Author: Miguel Rodríguez Asensio
+Maintainer: Miguel Rodríguez Asensio <miguel.rodriguezasensio@gmail.com>
+Description: Funciones para obtener un número importante de indicadores electorales descritos en el paquete, los cuales se pueden dos grandes apartados: El primero sería el que contiene los indicadores de desproporcionalidad electoral como el indicador de Rae, Loosemore and Hanby, etc. El segundo grupo está destinado a estudiar las dimensiones del voto del sistema de partidos, mediante los indicadores de fragmentación electoral, polarización, volatilidad, etc. También se pueden hacer, en base a los votos obtenidos, múltiples simulaciones de reparto de escaños en base a diferentes sistemas de reparto, como por ejemplo la Ley D'Hondt, Sainte-Laguë, etc. Por último, alguna de estas funciones se ha construido para que de forma automática se puedan obtener los datos proporcionados por el Ministerio del Interior español para diferentes procesos electorales celebrados en España. Todo lo anterior nos va a permitir realizar profundos estudios sobre los resultados obtenidos en cualquier tipo de elección.
+License: GPL-2  
+Encoding: UTF-8
+Suggests: knitr
+Imports: readxl, ggforce, ggplot2,xlsx,dplyr,sf,utils, rmarkdown
+LazyData: true
+VignetteBuilder: knitr
+RoxygenNote: 6.1.1

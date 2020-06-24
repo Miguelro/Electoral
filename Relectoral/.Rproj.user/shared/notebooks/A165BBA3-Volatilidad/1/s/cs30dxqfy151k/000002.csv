@@ -1,0 +1,5 @@
+"0","if (!require(""readxl"")) install.packages(""readxl"");require(""readxl"")"
+"2","Loading required package: readxl
+"
+"0","dat1<-read_xlsx(""../data_raw/volatilidad/abril_19.xlsx"",col_names = T)"
+"0","dat2<-read_xlsx(""../data_raw/volatilidad/noviembre_19.xlsx"",col_names = T)"

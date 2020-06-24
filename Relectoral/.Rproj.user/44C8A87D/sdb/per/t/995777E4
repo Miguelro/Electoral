@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "Package: Relectoral\nType: Package\nTitle: Análisis Electoral \nVersion: 0.1.0\nAuthor: Miguel Rodríguez Asensio\nMaintainer: Miguel Rodríguez Asensio <miguel.rodriguezasensio@gmail.com>\nDescription: Funciones para obtener un número importante de indicadores electorales descritos en el paquete, los cuales se pueden dos grandes apartados: El primero sería el que contiene los indicadores de desproporcionalidad electoral como el indicador de Rae, Loosemore and Hanby, etc. El segundo grupo está destinado a estudiar las dimensiones del voto del sistema de partidos, mediante los indicadores de fragmentación electoral, polarización, volatilidad, etc. También se pueden hacer, en base a los votos obtenidos, múltiples simulaciones de reparto de escaños en base a diferentes sistemas de reparto, como por ejemplo la Ley D'Hondt, Sainte-Laguë, etc. Por último, alguna de estas funciones se ha construido para que de forma automática se puedan obtener los datos proporcionados por el Ministerio del Interior español para diferentes procesos electorales celebrados en España. Todo lo anterior nos va a permitir realizar profundos estudios sobre los resultados obtenidos en cualquier tipo de elección.\nLicense: GPL-2  \nEncoding: UTF-8\nSuggests: knitr\nImports: readxl, ggforce, ggplot2,xlsx,dplyr,sf,utils, rmarkdown\nLazyData: true\nVignetteBuilder: knitr\nRoxygenNote: 6.1.1\n",
+    "created" : 1592414465266.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1649777286",
+    "id" : "995777E4",
+    "lastKnownWriteTime" : 1592414770,
+    "last_content_update" : 1592414770204,
+    "path" : "F:/Elecciones/TFM/Relectoral/DESCRIPTION",
+    "project_path" : "DESCRIPTION",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "dcf"
+}
